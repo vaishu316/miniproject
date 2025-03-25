@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Navbar';
+import Login from './components/Login';  // Updated path
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        cvwyvwi jkl;
-        </a>
-      </header>
+      <Navbar />
+      
+      <main className="p-4">
+        <h1 className="text-2xl font-bold">Welcome to RMK Hall Booking System</h1>
+        <p className="mt-2">Use the navigation bar to explore availability, facilities, and book halls.</p>
+      </main>
     </div>
   );
 }
