@@ -5,6 +5,7 @@ import { FaCalendarAlt, FaBuilding, FaClipboardList, FaEnvelope, FaUser, FaBookO
 import Login from "./Login";
 import Register from "./Register";
 import "./Navbar.css";
+import { NavDropdown } from "react-bootstrap";
 
 const Navbar = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -28,10 +29,20 @@ const Navbar = () => {
 
       <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul className="navbar-nav text-center">
-          <li className="nav-item mx-3"><Link className="nav-link text-white" to="/events"><FaCalendarAlt /> Events</Link></li>
+          <li className="nav-item mx-3">
+            <a className="nav-link text-white" href="/academic_calendar.xlsx" target="_blank" rel="noopener noreferrer">
+              <FaCalendarAlt /> Events
+            </a>
+          </li>
           <li className="nav-item mx-3"><Link className="nav-link text-white" to="/facilities"><FaBuilding /> Facilities</Link></li>
           <li className="nav-item mx-3"><Link className="nav-link active text-warning" to="/hall-bookings"><FaClipboardList /> Hall Bookings</Link></li>
           <li className="nav-item mx-3"><Link className="nav-link text-white" to="/contact"><FaEnvelope /> Contact</Link></li>
+          
+          {/* Dropdown for Other Forms */}
+          <NavDropdown title="Other Forms" id="other-forms-dropdown" className="nav-item mx-3 text-white">
+            <NavDropdown.Item as={Link} to="/od-form">OD Form</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/hostel-gatepass">Hostel Gate Pass Form</NavDropdown.Item>
+          </NavDropdown>
         </ul>
       </div>
 
